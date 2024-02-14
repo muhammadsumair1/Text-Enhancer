@@ -46,10 +46,10 @@ export default function Textform(props) {
   <textarea className="form-control" style={{backgroundColor: props.mode === "light"?"white":"#042743" , color: props.mode === "light"?"#042743":"white"}}  value={text} id="mybox" onChange={textChange} rows="8"></textarea>
     <div className="change-btn row">
     <div className="col-lg-8 col-sm-12">
-        <button className="mt-3 btn btn-primary mx-1 my-1" onClick = {upperClick} >Convert Uppercase</button>
-       <button className="mt-3 btn btn-primary mx-1 my-1" onClick={lowerClick} >Convert Lowercase</button>
-       <button className="mt-3 btn btn-primary mx-1 my-1" onClick={clearClick} >Clear Text</button>
-       <button className="mt-3 btn btn-primary mx-1 my-1" onClick={removeSpace} >Remove Extra Space</button>
+        <button disabled={text.length===0} className="mt-3 btn btn-primary mx-1 my-1" onClick = {upperClick} >Convert Uppercase</button>
+       <button disabled={text.length===0} className="mt-3 btn btn-primary mx-1 my-1" onClick={lowerClick} >Convert Lowercase</button>
+       <button disabled={text.length===0} className="mt-3 btn btn-primary mx-1 my-1" onClick={clearClick} >Clear Text</button>
+       <button disabled={text.length===0} className="mt-3 btn btn-primary mx-1 my-1" onClick={removeSpace} >Remove Extra Space</button>
        </div>
        <div className="word-set col-lg-4 col-sm-12"><h6 className="mt-3">({text.split(" ").filter((element)=>{return element.length!=0}).length}) <b> Words</b> , ({text.length}) <b> Characters</b> </h6></div>
     </div>
